@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Sign Up</h1>
+
+        <div class="name">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" maxlength="50" required>
+            <p id="nameError" class="error"></p>
+        </div>
+
+        <div class="email">
+            <label for="email">Enter email address</label>
+            <input id="email" type="email" name="email" required>
+            <p id="emailError" class="error"></p>
+        </div>
+
+        <div class="phone">
+            <label for="phone">Phone number</label>
+            <input id="phone" type="tel" name="phone" required>
+            <p id="phoneError" class="error"></p>
+        </div>
+
+        <div class="password">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" required>
+            <p id="passwordError" class="error"></p>
+        </div>
+        
+        <div class="password">
+            <label for="rPassword">Repeat password</label>
+            <input id="rPassword" type="password" name="password" required>
+            <p id="rPasswordError" class="error"></p>
+        </div>
+
+        <label for="birth">Date of birth</label>
+        <div class="birth">
+            <div class="month">
+                <select aria-invalid="false" aria-labelledby="SELECTOR_1_LABEL" id="SELECTOR_1" data-testid="" required>
+                    <option value="" class="r-kemksi">Month</option>
+                    <option value="1" class="r-kemksi">January</option>
+                    <option value="2" class="r-kemksi">February</option>
+                    <option value="3" class="r-kemksi">March</option>
+                    <option value="4" class="r-kemksi">April</option>
+                    <option value="5" class="r-kemksi">May</option>
+                    <option value="6" class="r-kemksi">June</option>
+                    <option value="7" class="r-kemksi">July</option>
+                    <option value="8" class="r-kemksi">August</option>
+                    <option value="9" class="r-kemksi">September</option>
+                    <option value="10" class="r-kemksi">October</option>
+                    <option value="11" class="r-kemksi">November</option>
+                    <option value="12" class="r-kemksi">December</option>
+                </select>
+            </div>
+            <div class="day">
+                <select aria-invalid="false" aria-labelledby="SELECTOR_2_LABEL" id="SELECTOR_2" data-testid="" required>
+                    <option value="" class="r-kemksi">Day</option>
+                    <option value="1" class="r-kemksi">1</option>
+                    <option value="2" class="r-kemksi">2</option>
+                    <option value="3" class="r-kemksi">3</option>
+                    <option value="4" class="r-kemksi">4</option>
+                    <option value="5" class="r-kemksi">5</option>
+                    <option value="6" class="r-kemksi">6</option>
+                    <option value="7" class="r-kemksi">7</option>
+                    <option value="8" class="r-kemksi">8</option>
+                    <option value="9" class="r-kemksi">9</option>
+                    <option value="10" class="r-kemksi">10</option>
+                    <option value="11" class="r-kemksi">11</option>
+                    <option value="12" class="r-kemksi">12</option>
+                    <option value="13" class="r-kemksi">13</option>
+                    <option value="14" class="r-kemksi">14</option>
+                    <option value="15" class="r-kemksi">15</option>
+                    <option value="16" class="r-kemksi">16</option>
+                    <option value="17" class="r-kemksi">17</option>
+                    <option value="18" class="r-kemksi">18</option>
+                    <option value="19" class="r-kemksi">19</option>
+                    <option value="20" class="r-kemksi">20</option>
+                    <option value="21" class="r-kemksi">21</option>
+                    <option value="22" class="r-kemksi">22</option>
+                    <option value="23" class="r-kemksi">23</option>
+                    <option value="24" class="r-kemksi">24</option>
+                    <option value="25" class="r-kemksi">25</option>
+                    <option value="26" class="r-kemksi">26</option>
+                    <option value="27" class="r-kemksi">27</option>
+                    <option value="28" class="r-kemksi">28</option>
+                    <option value="29" class="r-kemksi">29</option>
+                    <option value="30" class="r-kemksi">30</option>
+                    <option value="31" class="r-kemksi">31</option>
+                </select>
+            </div>
+
+            <div class="year">
+                <select id="year" required>
+                    <option value="">Year</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn-primary" disabled>Sign Up</button>
+    </div>
+
+    <div id="successCard" class="success-card" style="display: none;">
+        <h2>Registration Successful!</h2>
+        <p>Thank you for signing up. Your registration was successful.</p>
+    </div>
+
+    <script>
+        document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.querySelector('.container').style.display = 'none';
+            document.getElementById('successCard').style.display = 'block';
+        });
+    </script>
+
+</body>
+
+</html>

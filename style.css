@@ -1,0 +1,151 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: #536471;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #3b464e;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #bdd3e4;
+}
+
+/* Title */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Input Labels */
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #bdd3e4;
+}
+
+/* Input Fields */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #f5f5f5;
+    background-color: #536471;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 4px rgba(29, 161, 242, 0.8);
+    background-color: #4a5a65;
+}
+
+/* Placeholder */
+input::placeholder {
+    color: #aab8c2;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1da1f2;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #0d8ae7;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Dropdown Styling */
+select {
+    cursor: pointer;
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Birth Section Layout */
+.birth {
+    display: flex;
+    gap: 8px;
+}
+
+.birth .month, .birth .day, .birth .year {
+    flex: 1;
+}
+
+/* Error Messages */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* Autofill Fix */
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #536471 inset !important;
+    -webkit-text-fill-color: #f5f5f5 !important;
+}
+
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1da1f2;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Disabled button style */
+button:disabled {
+    background-color: #8bb4c7; /* Lighter color for the disabled state */
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+button:hover {
+    background-color: #0d8ae7;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Disabled button hover state */
+button:disabled:hover {
+    background-color: #8bb4c7; /* Keep the disabled button color on hover */
+    box-shadow: none;
+}
