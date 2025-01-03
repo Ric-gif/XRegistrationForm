@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const regex = /^\+\d{3}\d{3}\d{5}$/;
         
         if (!regex.test(phoneField.value)) {
-            phoneError.textContent = "Please enter a valid phone number.";
+            phoneError.textContent = "Please enter a valid phone number. Must start with + followed by country code.";
             phoneField.style.border = "1px solid red";
         } else {
             phoneError.textContent = "";
