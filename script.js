@@ -135,7 +135,6 @@ document.addEventListener("DOMContentLoaded", function () {
         // Check if age is less than 18 or greater than 120
         if (age < 18 || age > 120) {
             ageError.textContent = "Age must be between 18 and 120 years.";
-            isValid = false;
         } else {
             ageError.textContent = "";
         }
