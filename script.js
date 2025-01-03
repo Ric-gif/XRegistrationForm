@@ -54,10 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('phone').addEventListener('input', function () {
         const phoneField = document.getElementById('phone');
         const phoneError = document.getElementById('phoneError');
-        const regex = /^\+\d{3}\d{3}\d{5}$/;
+        const regex = /^\+\d{3}\s\d{3}\s\d{4}$/;
         
         if (!regex.test(phoneField.value)) {
-            phoneError.textContent = "Please enter a valid phone number. Must start with + followed by country code.";
+            phoneError.textContent = "Please enter a valid phone number. Must start with + followed by country code. Example: +123 456 7890";
             phoneField.style.border = "1px solid red";
         } else {
             phoneError.textContent = "";
