@@ -149,11 +149,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return age;
     }
 
-    // Validate age on change
-    monthDropdown.addEventListener("change", validateAge);
-    dayDropdown.addEventListener("change", validateAge);
-    yearDropdown.addEventListener("change", validateAge);
-
     // Initial validation on page load
     validateForm();
 });
