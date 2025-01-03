@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const formElements = document.querySelectorAll("input, select");
     const submitButton = document.querySelector(".btn-primary");
-
+    
     // Function to check if all fields are valid
     function validateForm() {
         let isValid = true;
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const phoneField = document.getElementById('phone');
         const phoneError = document.getElementById('phoneError');
         const regex = /^\+\d{1,3}\s\d{3}\s\d{5}$/;
-        
+
         if (!regex.test(phoneField.value)) {
             phoneError.textContent = "Please enter a valid phone number. Must start with + followed by country code. Example: +123 456 78901";
             phoneField.style.border = "1px solid red";
@@ -103,13 +103,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Event listener to validate birth date (age >= 18)
-    const monthDropdown = document.getElementById("month");
-    const dayDropdown = document.getElementById("day");
+    const monthDropdown = document.getElementById("SELECTOR_1");
+    const dayDropdown = document.getElementById("SELECTOR_2");
     const yearDropdown = document.getElementById("year");
 
     // Set the years dynamically
     const currentYear = new Date().getFullYear();
-    for (let year = currentYear - 18; year >= currentYear - 120; year--) {
+    for (let year = currentYear; year >= currentYear - 120; year--) {
         const option = document.createElement("option");
         option.value = year;
         option.textContent = year;
@@ -120,21 +120,26 @@ document.addEventListener("DOMContentLoaded", function () {
         const day = parseInt(dayDropdown.value);
         const month = parseInt(monthDropdown.value) - 1;
         const year = parseInt(yearDropdown.value);
-        const errorMessage = document.getElementById("error-message");
+        const ageError = document.getElementById("ageError");
 
+        // If any of the birth date fields are empty
         if (!day || !month || !year) {
-            errorMessage.textContent = "Please fill in all fields.";
+            ageError.textContent = "Please fill in all date fields.";
             return;
         }
 
+        // Calculate the age
         const birthDate = new Date(year, month, day);
         const age = calculateAge(birthDate);
 
+        // Check if age is less than 18 or greater than 120
         if (age < 18 || age > 120) {
-            errorMessage.textContent = "Age must be between 18 and 120 years.";
+            ageError.textContent = "Age must be between 18 and 120 years.";
+            isValid = false;
         } else {
-            errorMessage.textContent = "";
+            ageError.textContent = "";
         }
+
         validateForm();
     }
 
@@ -148,6 +153,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         return age;
     }
+
+    // Event listeners for birth date dropdowns
+    dayDropdown.addEventListener('change', validateAge);
+    monthDropdown.addEventListener('change', validateAge);
+    yearDropdown.addEventListener('change', validateAge);
+
 
     // Initial validation on page load
     validateForm();
