@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <form class="container">
         <h1>Sign Up</h1>
 
         <div class="name">
@@ -36,7 +36,7 @@
             <input id="password" type="password" name="password" placeholder="********" required>
             <p id="passwordError" class="error"></p>
         </div>
-        
+
         <div class="password">
             <label for="rPassword">Repeat password</label>
             <input id="rPassword" type="password" name="password" placeholder="********" required>
@@ -79,20 +79,12 @@
         </div>
         <p id="ageError" class="error"></p>
         <button type="submit" class="btn-primary" disabled>Sign Up</button>
-    </div>
+    </form>
 
     <div id="successCard" class="success-card" style="display: none;">
         <h2>Registration Successful!</h2>
         <p>Thank you for signing up. Your registration was successful.</p>
     </div>
-
-    <script>
-        document.querySelector('button[type="submit"]').addEventListener('click', function(event) {
-            event.preventDefault();
-            document.querySelector('.container').style.display = 'none';
-            document.getElementById('successCard').style.display = 'block';
-        });
-    </script>
 
 </body>
 

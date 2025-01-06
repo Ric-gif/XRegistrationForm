@@ -184,4 +184,25 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
+    // Submit form
+
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const formData = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            password: document.getElementById('password').value,
+            month: document.getElementById('month').value,
+            day: document.getElementById('day').value,
+            year: document.getElementById('year').value
+        };
+
+        console.log(formData);
+
+        document.querySelector('.container').style.display = 'none';
+        document.getElementById('successCard').style.display = 'block';
+    });
 });
